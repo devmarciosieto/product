@@ -2,23 +2,24 @@ package br.com.mmmsieto.product.domain.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.bson.types.ObjectId;
 
-import java.util.UUID;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
-public class Product {
+public class ProductEntity {
 
-    private UUID id;
+    private ObjectId id;
 
     private String name;
 
     private String description;
 
-    private Double price;
+    private BigDecimal price;
 
     private String imageUrl;
 
-    private Category category;
+    private CategoryEntity category;
 
 }
