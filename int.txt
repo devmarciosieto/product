@@ -1,0 +1,4 @@
+docker exec -it 7cd59595fc5e /bin/bash
+mongosh -u root
+show databases;
+use product
