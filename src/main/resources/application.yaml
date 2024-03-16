@@ -9,4 +9,8 @@ spring:
         authentication-database: admin
         username: root
         password: root
-        database: product
+        database:
+
+client:
+  supplier:
+    url: http://localhost:8082

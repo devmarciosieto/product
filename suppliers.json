@@ -1,7 +1,7 @@
 {
    "request":{
       "method":"GET",
-      "url":"/comments/64d1739b5bee710ddffd936d"
+      "url":"/suppliers/65f4dff99a9fc3014e7d7287"
    },
    "response":{
       "status":200,
@@ -10,8 +10,8 @@
       },
       "jsonBody":[
          {
-            "author":"João",
-            "text":"Muito bom o curso do DevDeOlho"
+            "name":"Magazine",
+            "company":"Magazine Luiza"
          }
       ]
    }
