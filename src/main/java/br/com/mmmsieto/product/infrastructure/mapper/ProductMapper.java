@@ -20,6 +20,9 @@ public interface ProductMapper {
     @Mapping(target = "id", source = "id", qualifiedByName = "objectIdToString")
     ProductResponse toProductResponse(ProductEntity productEntity);
 
+    @Mapping(target = "id", source = "id", qualifiedByName = "objectIdToString")
+    ProductResponse toProductResponseWithCompany(ProductEntity productEntity, String company);
+
     @org.mapstruct.Named("objectIdToString")
     default String objectIdToString(ObjectId objectId) {
         return objectId != null ? objectId.toString() : null;
