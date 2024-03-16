@@ -1,6 +1,6 @@
 package br.com.mmmsieto.product.infrastructure.client;
 
-import br.com.mmmsieto.product.infrastructure.entity.SupplierEntity;
+import br.com.mmmsieto.product.domain.entity.SupplierEntity;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

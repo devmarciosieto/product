@@ -4,7 +4,7 @@
     "url": "/suppliers/65f5ebdc39378b595d4132f2"
   },
   "response": {
-    "fixedDelayMilliseconds": "2000",
+    "fixedDelayMilliseconds": "500",
     "status": 200,
     "headers": {
       "Content-Type": "application/json"

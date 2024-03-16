@@ -1,4 +1,4 @@
-package br.com.mmmsieto.product.infrastructure.entity;
+package br.com.mmmsieto.product.domain.entity;
 
 import lombok.Getter;
 import lombok.Setter;
