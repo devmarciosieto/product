@@ -3,7 +3,6 @@ package br.com.mmmsieto.product.app.v1.controller;
 import br.com.mmmsieto.product.app.v1.controller.request.ProductRequest;
 import br.com.mmmsieto.product.app.v1.controller.response.ProductResponse;
 import br.com.mmmsieto.product.domain.service.ProductService;
-import br.com.mmmsieto.product.infrastructure.client.SupplierClient;
 import br.com.mmmsieto.product.infrastructure.mapper.ProductMapper;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -17,14 +16,11 @@ public class ProductController {
 
     private final ProductService productService;
     private final ProductMapper productMapper;
-    private final SupplierClient supplierClient;
 
     public ProductController(ProductService productService,
-                             ProductMapper productMapper, SupplierClient supplierClient) {
+                             ProductMapper productMapper) {
         this.productService = productService;
         this.productMapper = productMapper;
-
-        this.supplierClient = supplierClient;
     }
 
     @PostMapping
@@ -36,12 +32,7 @@ public class ProductController {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ProductResponse findById(@PathVariable("id") String id) {
-
-        String company = supplierClient.getSuppliers(id)
-                .stream().findFirst().orElse(null)
-                .getCompany();
-
-        return productMapper.toProductResponseWithCompany(productService.findById(id), company);
+        return productService.findById(id);
     }
 
     @GetMapping
