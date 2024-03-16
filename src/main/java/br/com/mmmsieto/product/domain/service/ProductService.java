@@ -15,7 +15,7 @@ public class ProductService {
     private final ProductMapper productMapper;
 
     public ProductService(ProductRepository productRepository,
-                            ProductMapper productMapper) {
+                          ProductMapper productMapper) {
         this.productRepository = productRepository;
         this.productMapper = productMapper;
     }
@@ -27,8 +27,8 @@ public class ProductService {
     public ProductEntity findById(String id) {
         ObjectId objectId = new ObjectId(id);
         return productRepository.findById(objectId)
-             .map(productMapper::toProductEntity)
-             .orElseThrow(RuntimeException::new);
+                .map(productMapper::toProductEntity)
+                .orElseThrow(RuntimeException::new);
     }
 
     public List<ProductEntity> findAll() {
@@ -36,7 +36,6 @@ public class ProductService {
                 .map(productMapper::toProductEntity)
                 .toList();
     }
-
 
 
 }

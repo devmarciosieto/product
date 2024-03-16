@@ -1,15 +1,15 @@
 spring:
-    application:
-        name: product
+  application:
+    name: product
 
-    data:
-      mongodb:
-        host: localhost
-        port: 27017
-        authentication-database: admin
-        username: root
-        password: root
-        database:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: root
+      password: root
+      database: product
 
 client:
   supplier:

@@ -20,10 +20,10 @@ public class ProductController {
     private final SupplierClient supplierClient;
 
     public ProductController(ProductService productService,
-                             ProductMapper productMapper,
-                             SupplierClient supplierClient) {
+                             ProductMapper productMapper, SupplierClient supplierClient) {
         this.productService = productService;
         this.productMapper = productMapper;
+
         this.supplierClient = supplierClient;
     }
 
