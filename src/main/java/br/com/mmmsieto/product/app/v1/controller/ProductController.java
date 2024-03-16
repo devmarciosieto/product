@@ -1,6 +1,7 @@
 package br.com.mmmsieto.product.app.v1.controller;
 
 import br.com.mmmsieto.product.app.v1.controller.request.ProductRequest;
+import br.com.mmmsieto.product.app.v1.controller.response.ProductResponse;
 import br.com.mmmsieto.product.domain.entity.ProductEntity;
 import br.com.mmmsieto.product.domain.service.ProductService;
 import br.com.mmmsieto.product.infrastructure.mapper.ProductMapper;
@@ -31,14 +32,16 @@ public class ProductController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ProductEntity findById(@PathVariable("id") String id) {
-        return productService.findById(id);
+    public ProductResponse findById(@PathVariable("id") String id) {
+        return productMapper.toProductResponse(productService.findById(id));
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<ProductEntity> findAll() {
-        return productService.findAll();
+    public List<ProductResponse> findAll() {
+        return productService.findAll().stream()
+                .map(productMapper::toProductResponse)
+                .toList();
     }
 
 }
